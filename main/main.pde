@@ -15,6 +15,7 @@ Boundary floor;
 int count;
 Spring spring;
 
+
 void setup(){
   size(480,800);
   box2d = new Box2DProcessing(this);
@@ -29,15 +30,19 @@ void setup(){
   spring = new Spring();
 }
 
+
 void mousePressed(){
   if(fish.contains(mouseX,mouseY)){
     spring.bind(mouseX,mouseY,fish);
   }
 }
 
+
 void mouseReleased(){
   spring.destroy();
 }
+
+
 void draw(){
   box2d.step();
   background(255);
@@ -51,6 +56,7 @@ void draw(){
   fs.addFood();
   fs.run();
 }
+
 
 void beginContact(Contact cp){
   Fixture f1 = cp.getFixtureA();
@@ -73,9 +79,11 @@ void beginContact(Contact cp){
   }
 }
 
+
 void endContact(Contact cp){
   
 }
+
 
 void removeContact(Contact cp){
 
