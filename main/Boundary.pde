@@ -3,6 +3,7 @@ class Boundary{
   float w,h;
   Body b;
   
+  
   Boundary(float x_, float y_, float w_, float h_){
     x = x_;
     y = y_;
@@ -22,6 +23,7 @@ class Boundary{
     b.createFixture(ps,1);
     b.setUserData(this);
   }
+  
   
   void display(){
     fill(0);

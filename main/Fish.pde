@@ -7,6 +7,7 @@ class Fish{
   float r;
   color col = color(175);
   
+  
   Fish(int x_,int y_){
     r = 10;
     int x = x_;
@@ -35,9 +36,12 @@ class Fish{
     body.setUserData(this);
     //fd.setUserData("Cat");
   }
+  
+  
   void run(){
     display();
   }
+  
   
   void upSize(){
     r+=1;
@@ -47,10 +51,12 @@ class Fish{
     }
   }
   
+  
   void applyForce(Vec2 force){
     Vec2 pos = body.getWorldCenter();
     body.applyForce(force,pos);
   }
+  
   
   //void updateL(){
   //  location.add(new Vec2(-10,0));
@@ -59,12 +65,14 @@ class Fish{
   //  location.add(new Vec2(10,0));
   //}
   
+  
   boolean contains(float x, float y) {
     Vec2 worldPoint = box2d.coordPixelsToWorld(x, y);
     Fixture f = body.getFixtureList();
     boolean inside = f.testPoint(worldPoint);
     return inside;
   }
+  
   
   void display(){
     Vec2 pos = box2d.getBodyPixelCoord(body);
